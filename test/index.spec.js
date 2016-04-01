@@ -1,10 +1,8 @@
-const chai = require('chai');
-const dotenv = require('dotenv');
-const fs = require('fs');
+import chai from 'chai';
+import dotenv from 'dotenv';
 
-if (fs.existsSync('.env')) {
-  dotenv.load();
-}
+dotenv.config({ silent: process.env.NODEJS_ENV !== 'development'});
+
 chai.should();
 
 describe('First test', () => {
